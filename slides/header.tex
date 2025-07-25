@@ -1,0 +1,59 @@
+% Make all text bold and centered
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\renewcommand{\familydefault}{\bfdefault}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{ragged2e}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% Configure hyperlinks
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,      % Internal links (sections, references)
+    urlcolor=blue,       % URL links
+    citecolor=blue,      % Citation links
+    filecolor=blue,      % File links
+    menucolor=blue,      % Menu links
+    runcolor=blue        % Run links
+}
+% Center content and set spacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{12pt plus 4pt minus 2pt}
+
+% Make all text larger - slightly smaller font
+\fontsize{10}{12}\selectfont
+
+% Make horizontal rules create page breaks with vertical centering
+\let\oldrule\rule
+\renewcommand{\rule}[2]{\vfill\clearpage\vspace*{\fill}}
+
+% Center section headers with larger font
+\usepackage{titlesec}
+\titleformat{\section}{\fontsize{14}{16}\selectfont\bfseries\centering}{\thesection}{1em}{}
+\titleformat{\subsection}{\fontsize{12}{14}\selectfont\bfseries\centering}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\fontsize{10}{12}\selectfont\bfseries\centering}{\thesubsubsection}{1em}{}
+
+% Center all paragraphs and lists
+\usepackage{enumitem}
+\setlist{leftmargin=*, itemsep=6pt}
+
+% Make sure everything is centered both horizontally and vertically
+\AtBeginDocument{%
+  \vspace*{\fill}
+  \fontsize{10}{12}\selectfont
+  \bfseries
+}
+
+% Add vertical fill at the end of document
+\AtEndDocument{%
+  \vspace*{\fill}
+}
+
+% Remove page numbers
+\pagestyle{empty}
+
+% Remove the problematic hrule redefinition - let Pandoc handle page breaks naturally
