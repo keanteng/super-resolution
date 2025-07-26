@@ -1,7 +1,7 @@
 export PANDOC_PATH="/C/Users/Khor Kean Teng/Downloads/pandoc-3.7.0.2-windows-x86_64/pandoc-3.7.0.2"
 export PATH="$PATH:$PANDOC_PATH"
 
-cd "slides-2"
+cd "slides-3"
 
 # Generate PDF with LaTeX for A4 paper size
 pandoc "presentation-version-2.md" -o "presentation-version-2.pdf" \
