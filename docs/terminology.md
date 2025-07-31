@@ -26,7 +26,7 @@
     - A low PSNR value suggests that there is a significant amount of distortion or noise in the processed image compared to the original.
 
 $$
-PSNR = 10\times \log_{10}{\frac{MAX_I}{MSE}}
+PSNR = 10\times \log_{10}{\frac{MAX_I^2}{MSE}}
 $$
 
 - SSIM:
